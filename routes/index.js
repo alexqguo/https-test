@@ -11,6 +11,18 @@ router.get('/xframeoptions', (req, res, next) => {
     res.render('xframeoptions', { title: 'XFRAMEOPTIONS' });
 });
 
+// Cache-Control
+router.get('/cachecontrol', (req, res) => {
+    let isCacheControl = req.query.enabled === 'true';
+    let num = Number.parseInt(Math.random() * 1000);
+
+    if (isCacheControl) {
+        res.append('Cache-Control', 'no-cache, no-store, must-revalidate');
+    }
+
+    res.render('cache', { title: 'CACHE', num: num });
+});
+
 // XSS
 router.get('/xss', (req, res) => {
     res.append('X-XSS-Protection', '0');

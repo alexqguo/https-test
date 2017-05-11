@@ -3,6 +3,15 @@
     <head>
         <title><%= title %></title>
         <link rel='stylesheet' href='https://images-na.ssl-images-amazon.com/images/I/71-lsYRmNAL.css?AUIClients/AudibleBrickCitySkin#debug-true' />
+        <style>
+            #bad {
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                top: 0;
+                left: 0;
+            }
+        </style>
     </head>
     <body class="bc-container bc-spacing-top-large">
         <h1 class="bc-spacing-base">X-Frame-Options</h1>
@@ -10,13 +19,20 @@
         <div class="bc-row">
             <div class="bc-col bc-col-6">
                 <h2 class="bc-spacing-small">Good</h2>
-                <iframe src="https://arya-preprod.audible.com"></iframe>
+                <iframe width="100%" height="400px" src="https://arya-preprod.audible.com"></iframe>
             </div>
-            <div class="bc-col bc-col-6 bc-col-last">
+            <div class="bc-col bc-col-6 bc-col-last bc-pub-relative">
                 <h2 class="bc-spacing-small">Bad</h2>
-                <iframe src="https://www.expedia.com"></iframe>
+                <iframe width="100%" height="400px" src="https://www.expedia.com"></iframe>
+                <div id="bad">
+                <div>
             </div>
         </div>
 
+        <script>
+            document.getElementById('bad').addEventListener('click', function() {
+                alert('suckaaaa');
+            });
+        </script>
     </body>
 </html>

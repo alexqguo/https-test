@@ -3,9 +3,23 @@
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <style>
+        ul {
+            list-style-type: none;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+    </style>
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <h1>Simple HTTP headers</h1>
+    <ul>
+        <li><a href="/xframeoptions">X-Frame-Options</a></li>
+        <li><a href="/xss">X-XSS-Protection (bad)</a></li>
+        <li><a href="/xssprotection">X-XSS-Protection (good)</a></li>
+        <li><a href="/xssblock">X-XSS-Protection (also good)</a></li>
+        <li><a href="/cachecontrol">Cache-Control</a></li>
+    </ul>
   </body>
 </html>

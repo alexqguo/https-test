@@ -37,4 +37,41 @@ router.get('/xssblock', (req, res) => {
     res.render('xss', { title: 'XSS PROTECTION', val: req.query.val });
 });
 
+// Preconnect
+router.get('/preconnect', (req, res) => {
+    let key = 'preconnect';
+
+    res.render('hints', {
+        title: key.capitalize(),
+        key: key,
+        enabled: (req.query.enabled === 'true')
+    });
+});
+
+// Prefetch
+router.get('/prefetch', (req, res) => {
+    let key = 'prefetch';
+
+    res.render('hints', {
+        title: key.capitalize(),
+        key: key,
+        enabled: (req.query.enabled === 'true')
+    });
+});
+
+// Prerender
+router.get('/prerender', (req, res) => {
+    let key = 'prerender';
+
+    res.render('hints', {
+        title: key.capitalize(),
+        key: key,
+        enabled: (req.query.enabled === 'true')
+    });
+});
+
+String.prototype.capitalize = function() {
+    return this[0].toUpperCase() + this.slice(1);
+}
+
 module.exports = router;

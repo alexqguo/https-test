@@ -2,14 +2,32 @@
 <html>
     <head>
         <title><%= title %></title>
-        <link rel='stylesheet' href='https://images-na.ssl-images-amazon.com/images/I/71-lsYRmNAL.css?AUIClients/AudibleBrickCitySkin#debug-true' />
-    </head>
-    <body class="bc-container bc-spacing-top-large">
-        <h1 class="bc-spacing-base"><%= title %></h1>
 
         <% if (enabled) { %>
-            enabled! <%= key %>
+            <%- include('partials/' + key) %>
         <% } %>
-        <!-- <%- include(page) %> -->
+
+        <link rel="stylesheet" href="/stylesheets/style.css" />
+    </head>
+    <body>
+        <h1><%= title %></h1>
+
+        <% if (key === 'preconnect') { %>
+            <a href="https://webpagetest.org">Web Page Test</a>
+            <br>
+            <a href="https://alexguo-audible.github.io">Github IO page</a>
+            <br>
+            <a href="https://github.com/alexguo-audible/alexguo-audible.github.io">Github repository</a>
+            <br>
+            <a href="http://caniuse.com/#search=preconnect">Browser support</a>
+        <% } else if (key === 'prefetch') { %>
+            <a href="/next?key=prefetch">Go to next page</a>
+            <br>
+            <a href="http://caniuse.com/#search=prefetch">Browser support</a>
+        <% } else if (key === 'prerender') { %>
+            <a href="https://mobile.audible.com">Go to next page (mobile.audible.com)</a>
+            <br>
+            <a href="http://caniuse.com/#search=prerender">Browser support</a>
+        <% } %>
     </body>
 </html>

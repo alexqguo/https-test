@@ -74,6 +74,14 @@ router.get('/prerender', (req, res) => {
     });
 });
 
+// Hints next page
+router.get('/next', (req, res) => {
+    res.render('hints-next', {
+        title: 'Next Page',
+        key: req.query.key
+    });
+});
+
 String.prototype.capitalize = function() {
     return this[0].toUpperCase() + this.slice(1);
 }
